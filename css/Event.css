@@ -1,0 +1,31 @@
+body{height:100%;
+   width:100%;
+   background-image:url(image/webbckgrnd6.jpeg);/*your background image*/  
+   background-repeat:no-repeat;/*we want to have one single image not a repeated one*/  
+   background-size:cover;/*this sets the image to fullscreen covering the whole screen*/  
+   /*css hack for ie*/     
+}
+
+label{
+display:inline-block;
+width:200px;
+margin-right:30px;
+text-align:right;
+}
+
+button{
+    color: red;
+    background-color: black;
+    width: auto;
+    margin-left: 230px
+}
+
+h3{
+    text-align: left
+}
+
+img{
+    width: 75%;
+    height: 70%;
+    position: fixed
+}

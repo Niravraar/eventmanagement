@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Registration</title>
+<script src = "js/angular.min.js"></script>
+<script src = "js/app2.js"></script>
+<link rel="stylesheet" href="CSS/AllEventStyle.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>    
+<a class = "btn btn-default" href="index.html"><font color='blue'>Event Registration</font></a>
+<a class = "btn btn-default" href="AllEvents.html"><font color='blue'>All Events</font></a>
+<body ng-app = "Event">
+	<div ng-controller="EventController">
+	<!-- {{authors}} -->
+        <script>
+        document.onkeypress = function ( e ) {
+  e = e || window.event;
+  var s = String.fromCharCode( e.keyCode || e.which );
+  if ( s.toUpperCase() === s && !e.shiftKey ) { // incomplete: shift + caps MAY = lowercase
+    alert('Please note!! Your caps lock is on')
+  }
+}
+        </script>
+	<h1>Search your Favorite Events</h1>
+        
+        <label for="name">Event Name</label><input ng-model="newEvent.eventname">
+    
+    <label for="location">Event Location</label><input ng-model="newEvent.eventlocation">
+    <label for="host">Event Host</label><input ng-model="newEvent.hosted">
+    <br/>
+        <br/>
+        <br/>
+	<table border = "1">
+        <tr>
+            <td id="td1"><font size="5">Event Name</font></td>
+            <td id="td1"><font size="5">Event Location</font></td>
+            <td id="td1"><font size="5">Event Date</font></td>
+            <td id="td1"><font size="5">Event Host</font></td>
+            <td id="td1"><font size="5">Artists</font></td>
+            <td id="td1"><font size="5">Entry Fee</font></td>
+            <td id="td1"><font size="5">Age Limit</font></td>
+            <td id="td1"><font size="5">Start Time</font></td>
+            
+        </tr>
+		<tbody data-ng-repeat="event in events">
+        <tr ng-repeat="sub in event" ng-if="sub.eventlocation == newEvent.eventlocation">
+<!--            {{sub.eventname}}-->
+            
+			<td id="td2">{{sub.eventname}}</td>
+			<td id="td2">{{sub.eventlocation}}</td>
+            <td id="td2">{{sub.eventdate}}</td>
+            <td id="td2">{{sub.hosted}}</td>
+            <td id="td2">{{sub.artists}}</td>
+            <td id="td2">{{sub.entryfee}}</td>
+            <td id="td2">{{sub.agelimit}}</td>
+            <td id="td2">{{sub.starttime}}</td> 
+        
+		</tr>
+        <tr ng-repeat="sub in event" ng-if="sub.eventname == newEvent.eventname">
+<!--            {{sub.eventname}}-->
+            
+			<td id="td2">{{sub.eventname}}</td>
+			<td id="td2">{{sub.eventlocation}}</td>
+            <td id="td2">{{sub.eventdate}}</td>
+            <td id="td2">{{sub.hosted}}</td>
+            <td id="td2">{{sub.artists}}</td>
+            <td id="td2">{{sub.entryfee}}</td>
+            <td id="td2">{{sub.agelimit}}</td>
+            <td id="td2">{{sub.starttime}}</td> 
+        
+		</tr>
+        <tr ng-repeat="sub in event" ng-if="sub.hosted == newEvent.hosted">
+<!--            {{sub.eventname}}-->
+            
+			<td id="td2">{{sub.eventname}}</td>
+			<td id="td2">{{sub.eventlocation}}</td>
+            <td id="td2">{{sub.eventdate}}</td>
+            <td id="td2">{{sub.hosted}}</td>
+            <td id="td2">{{sub.artists}}</td>
+            <td id="td2">{{sub.entryfee}}</td>
+            <td id="td2">{{sub.agelimit}}</td>
+            <td id="td2">{{sub.starttime}}</td> 
+        
+		</tr>
+        </tbody>
+	</table> 
+<!--	{{events}}-->
+	
+ 	 
+	</div>
+
+</body>
+</html>
